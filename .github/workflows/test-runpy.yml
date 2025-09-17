@@ -1,0 +1,27 @@
+name: Test run py
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+
+jobs:
+  run-python-file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install depenencies
+        uses: pip install -r requirements
+
+      - name: Esegui run.py
+        uses: python run.py
+
+        
