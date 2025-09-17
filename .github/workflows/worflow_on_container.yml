@@ -1,10 +1,10 @@
 name : Workflow su container
 
 on:
-  workflow-dispatch:
+  workflow_dispatch:
 
 jobs:
-  cotainer_workflow:
+  containerr_workflow:
     runs-on: ubuntu-latest
 
     steps:
