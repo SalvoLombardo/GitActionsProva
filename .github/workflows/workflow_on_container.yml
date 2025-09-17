@@ -20,7 +20,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Esegui container
-        run: docker-compose up -d --build
+        run: docker compose up -d --build
 
       - name: Esegui pytest dentro container
-        run: docker-compose exec -T web pytest -v
+        run: docker compose exec -T web pytest -v
