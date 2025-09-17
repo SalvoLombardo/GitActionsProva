@@ -19,7 +19,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install depenencies
-        uses: pip install -r requirements
+        uses: pip install -r requirements.txt
 
       - name: Esegui run.py
         uses: python run.py
