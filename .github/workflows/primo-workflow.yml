@@ -10,4 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Saluto
-      run: eco "Ciao GitHub Actions"
+        run: echo "Ciao GitHub Actions"
