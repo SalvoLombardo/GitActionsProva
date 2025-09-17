@@ -1,4 +1,4 @@
-name: Test run py
+name: Test run.py
 
 on:
   push:
@@ -16,12 +16,10 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
+          python-version: '3.11'  
 
-      - name: Install depenencies
-        uses: pip install -r requirements.txt
+      - name: Install dependencies
+        run: pip install -r requirements.txt
 
       - name: Esegui run.py
-        uses: python run.py
-
-        
+        run: python run.py
