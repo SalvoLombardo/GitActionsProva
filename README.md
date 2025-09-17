@@ -2,4 +2,4 @@
 
 Piccola app Flask/Postgres
 
-ecc ecc ecc eccm ecc
+ecc ecc ecc eccm ecc asd
