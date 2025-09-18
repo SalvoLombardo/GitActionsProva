@@ -1,0 +1,25 @@
+name: Cron jobs
+
+on: 
+  schedule:
+    - cron: "0 0 * * FRI"
+
+jobs:
+  backup-db:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Bulild Container
+        run: docker compose up -d --build
+
+      - name: Backup db
+        run: docker compose exec -T db pg_dumpall -U postgres > backup_all.sql

@@ -1,0 +1,16 @@
+name: Prima Matrix
+
+on:
+  workflowd-dispatch:
+
+
+jobs:
+  first-matrix:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest,windows-latest]
+
+    steps:
+      - name: Saluto
+        run: echo "Ciao da ${{ matrix.os}}"
