@@ -23,3 +23,9 @@ jobs:
 
       - name: Backup db
         run: docker compose exec -T db pg_dumpall -U postgres > backup_all.sql
+
+      - name: Upload backup artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: db-backup
+          path backup_all.sql
