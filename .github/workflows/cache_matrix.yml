@@ -7,28 +7,28 @@ jobs:
   cache-job:
     runs-on: ubuntu-latest
   
-  steps:
+    steps:
 
-    - name: Checkout repo
-      uses: actions/checkout@v4
+      - name: Checkout repo
+        uses: actions/checkout@v4
 
-    - name: Setup Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.11'
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
 
-    - name: Cache pip
-      uses: actions/cache@v4 #faccio partire l'Action per la cache
-      with:
-       path: ~/.cache/pip #indirizzo sulla virtual machine dove salvare i risultati dell'installazione di requirements
-       key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }} #Creo una chiave che serve da collegamento quando si avvierà nuovamente la VM e che se corrisponde caricherà nuovamente i pacchetti installati senza fare tutto il processo
-       restore-key: | #questa invece serve se le due chiavi non corrispondono allora intanto si aggancia ad una simile mentre crea quella nuova, succede ad esempio quando si cambia qualche data a req.txt
-        ${{ runner.os }}-pip-  
+      - name: Cache pip
+        uses: actions/cache@v4 #faccio partire l'Action per la cache
+        with:
+        path: ~/.cache/pip #indirizzo sulla virtual machine dove salvare i risultati dell'installazione di requirements
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }} #Creo una chiave che serve da collegamento quando si avvierà nuovamente la VM e che se corrisponde caricherà nuovamente i pacchetti installati senza fare tutto il processo
+        restore-keys: | #questa invece serve se le due chiavi non corrispondono allora intanto si aggancia ad una simile mentre crea quella nuova, succede ad esempio quando si cambia qualche data a req.txt
+          ${{ runner.os }}-pip-  
 
-    - name: Install dependencies
-      run: pip install -r requirements.txt
-
-    
-
+      - name: Install dependencies
+        run: pip install -r requirements.txt
 
       
+
+
+        
