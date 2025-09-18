@@ -1,7 +1,7 @@
 name: Prima Matrix
 
 on:
-  workflowd-dispatch:
+  workflow-dispatch:
 
 
 jobs:
