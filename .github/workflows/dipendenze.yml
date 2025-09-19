@@ -20,3 +20,4 @@ jobs:
       - name: Fake deploy
         run : echo "Questo si legge se è partito l'altro job (test-job)"
 
+#actions
